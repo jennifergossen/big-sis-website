@@ -749,60 +749,57 @@ section {
 /* ===== TESTIMONIALS ===== */
 .social-proof {
   background: var(--warm-white);
+}
+
+.social-proof-header {
   text-align: center;
+  margin-bottom: 3rem;
 }
 
-.testimonial-track {
-  display: flex;
-  gap: 1.5rem;
-  max-width: 1200px;
-  margin: 3rem auto 0;
-  overflow-x: auto;
-  padding-bottom: 1rem;
-  scroll-snap-type: x mandatory;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+.testimonial-grid {
+  display: columns;
+  columns: 2;
+  column-gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
-
-.testimonial-track::-webkit-scrollbar { display: none; }
 
 .testimonial-card {
-  min-width: 350px;
+  break-inside: avoid;
   background: var(--cream);
   border-radius: 16px;
   padding: 2rem;
   border: 1px solid var(--border);
-  text-align: left;
-  scroll-snap-align: start;
-  flex-shrink: 0;
+  margin-bottom: 1.5rem;
+  position: relative;
 }
 
-.testimonial-stars {
-  color: var(--gold);
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
-  letter-spacing: 2px;
+.testimonial-card::before {
+  content: '\201C';
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  color: var(--terracotta);
+  opacity: 0.2;
+  position: absolute;
+  top: 0.75rem;
+  left: 1.25rem;
+  line-height: 1;
 }
 
 .testimonial-card blockquote {
   font-size: 0.95rem;
   color: var(--text-secondary);
-  line-height: 1.65;
+  line-height: 1.7;
   font-style: italic;
-  margin-bottom: 1.25rem;
   font-weight: 300;
+  padding-top: 0.5rem;
 }
 
 .testimonial-author {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--deep-brown);
-}
-
-.testimonial-role {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 500;
   color: var(--text-light);
-  margin-top: 0.15rem;
+  margin-top: 1rem;
 }
 
 /* ===== CTA BANNER (Homepage) ===== */
@@ -1808,6 +1805,64 @@ footer {
   font-weight: 600;
 }
 
+/* ===== WAITLIST FORM ===== */
+.waitlist-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.waitlist-form input[type="email"] {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  background: var(--cream);
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.waitlist-form input[type="email"]::placeholder {
+  color: var(--text-light);
+}
+
+.waitlist-form input[type="email"]:focus {
+  border-color: var(--terracotta);
+}
+
+.waitlist-form button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 100px;
+  background: var(--deep-brown);
+  color: var(--cream);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.waitlist-form button:hover {
+  background: var(--terracotta-dark);
+  transform: translateY(-1px);
+}
+
+.waitlist-form.sage button { background: var(--sage-dark); }
+.waitlist-form.sage button:hover { background: var(--sage); color: var(--deep-brown); }
+
+.waitlist-success {
+  font-size: 0.85rem;
+  color: var(--sage-dark);
+  font-weight: 500;
+  margin-top: 0.75rem;
+  display: none;
+}
+
 /* ===== WORKSHOPS PAGE ===== */
 .page-hero.workshops {
   background: var(--deep-brown);
@@ -1903,8 +1958,7 @@ footer {
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
   }
   .pillar-products-grid { grid-template-columns: 1fr; }
-  .about-stats { gap: 1.5rem; }
-  .testimonial-card { min-width: 280px; }
+  .testimonial-grid { columns: 1; }
   .hero { padding: 7rem 1.5rem 4rem; min-height: auto; }
   .page-hero { padding: 8rem 1.5rem 3.5rem; }
   .cta-inner { padding: 3rem 1.5rem; }

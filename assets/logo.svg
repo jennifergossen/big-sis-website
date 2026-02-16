@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700');
+    .logo-text { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; }
+  </style>
+  <text x="0" y="42" class="logo-text">
+    <tspan fill="#3D2B1F">big </tspan><tspan fill="#C4705A">sis</tspan>
+  </text>
+</svg>
