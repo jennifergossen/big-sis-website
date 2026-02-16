@@ -1608,16 +1608,6 @@ footer {
   color: var(--terracotta-dark);
 }
 
-.legal-placeholder {
-  background: rgba(212, 165, 116, 0.1);
-  border: 1px dashed var(--gold);
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin: 1rem 0;
-  font-size: 0.9rem;
-  color: var(--gold-dark);
-}
-
 /* ===== SERVICE / PROOFREADING PAGE ===== */
 .service-section {
   max-width: 1000px;
@@ -1803,64 +1793,6 @@ footer {
   left: 0;
   color: var(--terracotta);
   font-weight: 600;
-}
-
-/* ===== WAITLIST FORM ===== */
-.waitlist-form {
-  display: flex;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-.waitlist-form input[type="email"] {
-  flex: 1;
-  padding: 0.6rem 1rem;
-  border: 1px solid var(--border);
-  border-radius: 100px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.85rem;
-  color: var(--text-primary);
-  background: var(--cream);
-  outline: none;
-  transition: border-color 0.3s;
-}
-
-.waitlist-form input[type="email"]::placeholder {
-  color: var(--text-light);
-}
-
-.waitlist-form input[type="email"]:focus {
-  border-color: var(--terracotta);
-}
-
-.waitlist-form button {
-  padding: 0.6rem 1.2rem;
-  border: none;
-  border-radius: 100px;
-  background: var(--deep-brown);
-  color: var(--cream);
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.8rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  white-space: nowrap;
-}
-
-.waitlist-form button:hover {
-  background: var(--terracotta-dark);
-  transform: translateY(-1px);
-}
-
-.waitlist-form.sage button { background: var(--sage-dark); }
-.waitlist-form.sage button:hover { background: var(--sage); color: var(--deep-brown); }
-
-.waitlist-success {
-  font-size: 0.85rem;
-  color: var(--sage-dark);
-  font-weight: 500;
-  margin-top: 0.75rem;
-  display: none;
 }
 
 /* ===== WORKSHOPS PAGE ===== */

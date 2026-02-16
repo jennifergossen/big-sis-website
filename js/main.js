@@ -63,28 +63,3 @@ document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
   });
 });
 
-/* ===== WAITLIST FORM HANDLER ===== */
-function handleWaitlist(form, e) {
-  e.preventDefault();
-  var formData = new FormData(form);
-
-  fetch(form.action, {
-    method: 'POST',
-    body: formData,
-    headers: { 'Accept': 'application/json' }
-  }).then(function (response) {
-    if (response.ok) {
-      form.style.display = 'none';
-      var success = form.nextElementSibling;
-      if (success) success.style.display = 'block';
-    }
-  }).catch(function () {
-    var email = form.querySelector('input[type="email"]').value;
-    var product = form.querySelector('input[name="waitlist"]').value;
-    window.location.href = 'mailto:hello-jenny@outlook.com?subject=Waitlist: ' +
-      encodeURIComponent(product) + '&body=' +
-      encodeURIComponent('Hi Jenny,\n\nPlease add me to the waitlist for ' + product + '.\n\nMy email: ' + email + '\n\nThank you!');
-  });
-
-  return false;
-}
